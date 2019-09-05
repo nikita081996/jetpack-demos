@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="nikitaverma.example.com.navigation.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_chooseReciepeFragment"
+            app:destination="@id/chooseReciepeFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_balanceFragment"
+            app:destination="@id/balanceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="nikitaverma.example.com.navigation.TransactionFragment"
+        android:label="fragment_transaction"
+        tools:layout="@layout/fragment_transaction" />
+    <fragment
+        android:id="@+id/chooseReciepeFragment"
+        android:name="nikitaverma.example.com.navigation.ChooseReciepeFragment"
+        android:label="fragment_choose_reciepe"
+        tools:layout="@layout/fragment_choose_reciepe" >
+        <action
+            android:id="@+id/action_chooseReciepeFragment_to_enterRecipeDetailsFragment"
+            app:destination="@id/enterRecipeDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/balanceFragment"
+        android:name="nikitaverma.example.com.navigation.BalanceFragment"
+        android:label="fragment_balance"
+        tools:layout="@layout/fragment_balance" />
+    <fragment
+        android:id="@+id/enterRecipeDetailsFragment"
+        android:name="nikitaverma.example.com.navigation.EnterRecipeDetailsFragment"
+        android:label="fragment_enter_recipe_details"
+        tools:layout="@layout/fragment_enter_recipe_details" >
+        <action
+            android:id="@+id/action_enterRecipeDetailsFragment_to_receipeConfirmationFragment2"
+            app:destination="@id/receipeConfirmationFragment" />
+        <argument
+            android:name="Receipe Name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/receipeConfirmationFragment"
+        android:name="nikitaverma.example.com.navigation.ReceipeConfirmationFragment"
+        android:label="fragment_receipe_confirmation"
+        tools:layout="@layout/fragment_receipe_confirmation" >
+        <argument
+            android:name="Receipe Price"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="Receipe Name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_receipeConfirmationFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:exitAnim="@anim/nav_default_enter_anim"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/mainFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment android:id="@+id/details_page_fragment"
+        android:label="Details"
+        android:name="nikitaverma.example.com.navigation.TransactionFragment" />
+</navigation>

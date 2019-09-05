@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/transactionFragment"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="Transaction" />
+
+    <item
+        android:id="@id/chooseReciepeFragment"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="Choose Receipe" />
+
+    <item
+        android:id="@id/balanceFragment"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="Balance" />
+
+</menu>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Preferences</string>
+    <string name="sync_connection_type_default_values">WIFI</string>
+    <string-array name="sync_connection_type_entries">
+        <item>WIFI</item>
+        <item>MOBILE</item>
+        <item>WIFI?MOBILE</item>
+    </string-array>
+
+    <string-array name="sync_connection_type_values">
+        <item>WIFI</item>
+        <item>MOBILE</item>
+        <item>WIFI?MOBILE</item>
+    </string-array>
+
+</resources>

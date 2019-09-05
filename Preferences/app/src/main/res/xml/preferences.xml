@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <CheckBoxPreference
+        android:defaultValue="true"
+        app:key="sync"
+        app:title="Sync"
+        />
+
+    <EditTextPreference
+        app:dialogTitle="Dialog Titile"
+        app:key="counting"
+        app:title="EditText"
+        app:useSimpleSummaryProvider="true" />
+
+    <ListPreference
+        android:defaultValue="@string/sync_connection_type_default_values"
+        android:dependency="sync"
+        android:entries="@array/sync_connection_type_entries"
+        android:entryValues="@array/sync_connection_type_values"
+        app:key="listPreference"
+        app:summary="change connection type"
+        app:title="Sync Connection type" />
+
+    <Preference
+        app:key="activity"
+        app:title="Launch New activity">
+        <intent
+            android:targetClass="nikitaverma.example.com.preferences.SecondActivity"
+            android:targetPackage="nikitaverma.example.com.preferences">
+            <extra
+                android:name="data"
+                android:value="Settting Preference data" />
+        </intent>
+    </Preference>
+
+    <PreferenceCategory
+        app:key="notifications_category"
+        app:title="Notifications">
+
+        <SwitchPreferenceCompat
+            app:key="notifications"
+            app:title="Enable message notifications" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="help_category"
+        app:title="Help">
+
+        <Preference
+            app:fragment="nikitaverma.example.com.preferences.HelpFragment"
+            app:key="feedback"
+            app:summary="Report technical issues or suggest new features"
+            app:title="Send feedback">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://www.google.com" />
+        </Preference>
+    </PreferenceCategory>
+
+    <Preference
+        app:key="share"
+        app:title="Share">
+
+    </Preference>
+</PreferenceScreen>

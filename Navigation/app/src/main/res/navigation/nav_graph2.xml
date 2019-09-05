@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph2"
+    app:startDestination="@id/chooseReciepeFragment">
+
+    <fragment
+        android:id="@+id/chooseReciepeFragment"
+        android:name="nikitaverma.example.com.measurement.ChooseReciepeFragment"
+        android:label="fragment_choose_reciepe"
+        tools:layout="@layout/fragment_choose_reciepe">
+        <action
+            android:id="@+id/action_chooseReciepeFragment_to_enterRecipeDetailsFragment"
+            app:destination="@id/enterRecipeDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterRecipeDetailsFragment"
+        android:name="nikitaverma.example.com.measurement.EnterRecipeDetailsFragment"
+        android:label="fragment_enter_recipe_details"
+        tools:layout="@layout/fragment_enter_recipe_details">
+        <action
+            android:id="@+id/action_enterRecipeDetailsFragment_to_receipeConfirmationFragment2"
+            app:destination="@id/receipeConfirmationFragment" />
+        <argument
+            android:name="Receipe Name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/receipeConfirmationFragment"
+        android:name="nikitaverma.example.com.measurement.ReceipeConfirmationFragment"
+        android:label="fragment_receipe_confirmation"
+        tools:layout="@layout/fragment_receipe_confirmation">
+        <argument
+            android:name="Receipe Price"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="Receipe Name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_receipeConfirmationFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:exitAnim="@anim/nav_default_enter_anim"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/mainFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
